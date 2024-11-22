@@ -1,11 +1,13 @@
-package ExamenDI;
+package vistaControlador;
 
-import static ExamenDI.Ventana_principal.datosRellenos;
+import vistaControlador.Ventana_principal;
+import static vistaControlador.Ventana_principal.datosRellenos;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
+import modelo.Usuario;
 
 public class Ventana_nueva_reserva extends javax.swing.JFrame {
 

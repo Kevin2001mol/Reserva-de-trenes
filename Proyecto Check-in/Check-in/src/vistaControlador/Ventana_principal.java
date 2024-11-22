@@ -1,9 +1,10 @@
-package ExamenDI;
+package vistaControlador;
 
-import static ExamenDI.Ventana_nueva_reserva.backgroundUsable;
-import static ExamenDI.Ventana_nueva_reserva.users;
+import static vistaControlador.Ventana_nueva_reserva.backgroundUsable;
+import static vistaControlador.Ventana_nueva_reserva.users;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import modelo.Usuario;
 
 public class Ventana_principal extends javax.swing.JFrame {
 
@@ -48,7 +49,7 @@ public class Ventana_principal extends javax.swing.JFrame {
         boton_nueva_reserva = new javax.swing.JButton();
         boton_check_in = new javax.swing.JButton();
         checkCondiciones = new javax.swing.JCheckBox();
-        jLabel1 = new javax.swing.JLabel();
+        lblTrenPng = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
         itemSalir = new javax.swing.JMenuItem();
@@ -103,7 +104,7 @@ public class Ventana_principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ExamenDI/train_logo.png"))); // NOI18N
+        lblTrenPng.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/train_logo.png"))); // NOI18N
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
@@ -111,37 +112,31 @@ public class Ventana_principal extends javax.swing.JFrame {
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
+                .addComponent(checkCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(lblTrenPng, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addComponent(checkCondiciones, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(91, 91, 91)
+                        .addComponent(comboCodReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                        .addGap(52, 52, 52)
                         .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                                .addComponent(texto_principal)
-                                .addGap(87, 87, 87))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                                .addComponent(comboCodReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(162, 162, 162))
-                            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(boton_nueva_reserva, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(boton_check_in, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap())))))
+                            .addComponent(boton_nueva_reserva, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(texto_principal)
+                            .addComponent(boton_check_in, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(53, 53, 53))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(checkCondiciones)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74))
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                         .addComponent(texto_principal)
                         .addGap(18, 18, 18)
                         .addComponent(comboCodReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -149,7 +144,11 @@ public class Ventana_principal extends javax.swing.JFrame {
                         .addComponent(boton_nueva_reserva)
                         .addGap(18, 18, 18)
                         .addComponent(boton_check_in)
-                        .addGap(69, 69, 69))))
+                        .addGap(69, 69, 69))
+                    .addGroup(panelPrincipalLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblTrenPng, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         menuArchivo.setText("Archivo");
@@ -285,8 +284,8 @@ public class Ventana_principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboCodReserva;
     private javax.swing.JMenuItem itemBorrar;
     private javax.swing.JMenuItem itemSalir;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblTrenPng;
     private javax.swing.JMenu menuArchivo;
     private javax.swing.JMenu menuEdicion;
     private javax.swing.JPanel panelPrincipal;
