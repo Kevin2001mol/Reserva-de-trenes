@@ -1,0 +1,7 @@
+Pruebas:
+-si hace check-in al inicio, le saltara una ventana modal donde le indica que tiene que hacer acciones previas
+- si no acepta las condiciones, no apareceran como leidas y aceptadas.
+- si  los campos nombre, apellidos,fecha o correo estan vacios, saltara una ventana modal informando al ussuario.
+- si la fecha no es del tipo especificado se le notificará al usuario
+- si el correo no es válido, se le informará al usuario con una ventana modal
+
